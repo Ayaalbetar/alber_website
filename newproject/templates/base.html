@@ -1,0 +1,29 @@
+{% load static %}
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/style-rtl.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/a.jfif' %}">
+    <title>{% block content1 %} {%endblock%} </title>
+</head>
+<body>
+<script type="text/javascript" src="{% static 'js/jquery-3.4.1.slim.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+ <!-- <img  width="50%" src="{% static 'img/a.png' %}" alt="alber">-->
+
+{% include 'part/_navbar.html' %}
+<br><br><br><br><br>
+{% block content %}
+<br><br><br><br><br><br><br><br><br>
+{% endblock%}
+{% include 'part/_footer.html' %}
+
+
+
+
+
+</body>
+</html>

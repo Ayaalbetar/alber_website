@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{%  load static %}
+{% block content %}
+
+<input type="hidden" id="custId" name="custId" value="2">
+ <h2 class="table-primary">
+ <p class="text-center text-primary p-3" style="font-size: 30px">
+ كفالة عائلة كريمة</p></h2>
+ <table class="table text-right table-borderless table-striped container">
+ <form   action="{%url 'services'%}" class="form"  method="POST">
+        {% csrf_token %}
+ 	<tr>
+ 		<td>
+ 			<div class="form-group form-inline">
+             <label for="h1">اسم الزوج</label>
+             <input type="text" class="form-control" name="name" id="h1" required/>
+           </div>
+ 		</td>
+ 		<td>
+ 			<div class="form-group form-inline">
+            <label for="family">عدد أفراد الأسرة</label>
+            <input type="number" class="form-control"  name="x2" id="family" required/>
+            </div>
+ 		</td>
+ 	</tr>
+ 	<tr>
+ 		<td>
+ 			<div class="form-group form-inline">
+             <label for="h2">نسبة الزوج</label>
+             <input type="text" class="form-control" name="name" id="h2" required/>
+           </div>
+ 		</td>
+ 		<td>
+ 			<div class="form-group form-inline">
+            <label for="male">عدد الذكور</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" class="form-control"  name="x2" id="male" required/>
+            </div>
+ 		</td>
+ 	</tr>
+ 	<tr>
+ 		<td>
+ 			<div class="form-group form-inline">
+             <label for="w1">اسم الزوجة</label>
+             <input type="text" class="form-control" name="name" id="w2" required/>
+           </div>
+ 		</td>
+ 		<td>
+ 			<div class="form-group form-inline">
+            <label for="fmale">عدد الإناث</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="number" class="form-control"  name="x2" id="fmale" required/>
+            </div>
+ 		</td>
+ 	</tr>
+ 	<tr>
+ 		<td>
+ 			<div class="form-group form-inline">
+             <label for="name1">نسبة الزوجة</label>
+             <input type="text" class="form-control" name="name" id="name1" required/>
+           </div>
+ 		</td>
+ 		<td>
+ 			<div class="form-group form-inline">
+            <label for="Nationality">الجنسية</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" class="form-control"   name="nationality" id="Nationality" value="سورية"/>
+ 		</td>
+ 	</tr>
+ 	<tr>
+ 		<td>
+ 			<div class="form-group form-inline">
+            <label for="phone">الهاتف</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="tel" class="form-control"  name="phone" id="phone" required/>
+            </div>
+ 		</td>
+ 		<td>
+ 			<div class="form-group form-inline">
+            <label for="Textarea1">العنوان بالنفصيل</label>
+            <textarea class="form-control" id="Textarea1" name="addres"  required rows="2"></textarea>
+            </div>
+ 		</td>
+ 	</tr>
+    <td class="table-primary" colspan="2"><p class="text-center text-info" style="font-size: 30px">الرجاء رفع الصور التالية</p></td>
+
+    <tr>
+        <td>
+      	   <div class="form-group form-inline">
+           <label for="File1">صورة هوية الزوج</label>
+           <input type="file" class="form-control-file"  required  name="f1" id="File1">
+           </div>
+        </td>
+        <td>
+        	<div class="form-group form-inline">
+            <label for="File2">صورة هوية الزوجة</label>
+            <input type="file" class="form-control-file"  required name="f2" id="File2">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        	<div class="form-group form-inline">
+            <label for="File3">وثيقة غير موظف للزوج <div class="text-danger">
+            	<b><u>إن وجد </u></b></div></label>
+            <input type="file" class="form-control-file" name="f3" id="File3">
+            </div>
+        </td>
+        <td>
+        	<div class="form-group form-inline">
+            <label for="File4">وثيقة غير موظف للزوجة <div class="text-danger">
+            	<b><u>إن وجد </u></b></div></label>
+            <input type="file" class="form-control-file" name="f4" id="File4">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        	<div class="form-group form-inline">
+            <label for="File5">بيان بالراتب للزوج <div class="text-danger">
+            	<b><u>إن وجد </u></b></div></label>
+            <input type="file" class="form-control-file" name="f5" id="File5">
+            </div>
+        </td>
+        <td>
+        	<div class="form-group form-inline">
+            <label for="File6">بيان بالراتب للزوجة<div class="text-danger">
+            	<b><u>إن وجد </u></b></div></label>
+            <input type="file" class="form-control-file" id="File6" name="f6">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        	<div class="form-group form-inline">
+            <label for="File7"> بيان عائلي</label>
+            <input type="file" class="form-control-file" required name="f7" id="File7" >
+            </div>
+        </td>
+        <td>
+        	<div class="form-group form-inline">
+            <label for="File8">وثيقة نفي ملكية</label>
+            <input type="file"  class="form-control-file" required name="f8" id="File8">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        	<div class="form-group form-inline">
+            <label for="File9">عقد ايجار المنزل</label>
+            <input type="file" class="form-control-file" required name="f9" id="File9" >
+            </div>
+        </td>
+        <td>
+        	<div class="form-group form-inline">
+            <label for="File10">وثائق صحية تثبت عدم قدرة الزوج على العمل</label>
+            <input type="file"  class="form-control-file" required name="f10" id="File10" multiple>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+    	<td>
+    	     <button type="submit" class="btn btn-outline-primary">ارسال</button>
+             <button type="reset" class="btn btn-outline-primary">اعادة الطلب</button></td>
+
+
+  </tr>
+
+
+
+
+</form>
+</table>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% load static%}
+body {
+direction :rtl;
+}
+.navbar {
+box-shadow :10px 2px 5px #ebebeb ;
+}
+footer{
+background-color:rgb(47 107 172 / 50%);
+color:#ffffff;
+}
+footer .footer-item  {
+
+display:inline-block;
+font-size:16px;
+padding :10px 20px;
+margin:0 010px;
+
+
+
+}
+
+footer footer-item h4 img{
+
+}
+ul{
+margin:0;
+padding:0;}
+
