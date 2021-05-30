@@ -1,3 +1,4 @@
+from django.core.files.storage import  *
 from django.db import models
 
 # Create your models here.
@@ -33,11 +34,11 @@ class Person(models.Model):
       hasbend =models.CharField(max_length=30,null=True,default='')
       fhasbend = models.CharField(max_length=30,null=True ,default=None)
       card_number = models.PositiveIntegerField(null=True,default=0)
-      percentage_health=models.PositiveIntegerField(null='True',default=0)
-      count_child =models.PositiveIntegerField(null=True,default=0)
-      amount_money=models.DecimalField(max_digits=6,decimal_places=2,null=True)
+      percentage_health=models.PositiveIntegerField(null=True, default=0)
+      count_child =models.PositiveIntegerField(null=True, default=0)
+      amount_money=models.DecimalField(max_digits=6, decimal_places=2,null=True)
       assistance =models.ManyToManyField(Service_details, through='Request')
-      birthday=models.DateField(default=date.today ,null=True)
+      birthday=models.DateField(default=date.today, null=True)
       nationality=models.CharField( max_length=30, default='سورية')
       father_die =models.BooleanField( default='False')
       # assistance = models.CharField(max_length=40, null='True')
@@ -45,6 +46,8 @@ class Person(models.Model):
           # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
           return 'user_{0}/{1}'.format(instance.id_namber, filename)
       photo =models.FileField(upload_to=user_directory_path, null='True')
+      #fs = FileSystemStorage(location='/media/photos')
+      #photo2=models.ImageField(storage=fs,upload_to=fs)
 
       def __str__(self):
         return  self.fname
@@ -72,3 +75,8 @@ class Request(models.Model):
     request_date =models.DateTimeField(auto_now_add=True)
     request_place = models.CharField(max_length=40 ,null=True)
     status =models.SmallIntegerField(null=True)
+
+
+class test (models.Model):
+    name=models.CharField(max_length=30)
+    file= models.FileField(upload_to="")

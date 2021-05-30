@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap');
 {% load static%}
 body {
 direction :rtl;
+}
+*{
+font-family: 'Tajawal', sans-serif;
 }
 .navbar {
 box-shadow :10px 2px 5px #ebebeb ;
@@ -15,9 +19,6 @@ display:inline-block;
 font-size:16px;
 padding :10px 20px;
 margin:0 010px;
-
-
-
 }
 
 footer footer-item h4 img{

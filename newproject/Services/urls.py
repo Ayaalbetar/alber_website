@@ -10,5 +10,5 @@ urlpatterns=[
    # path('services/1/3', views.newfamily, name='newfamily'),
     #path('services/2/1', views.newmedicine, name='newmwdicine'),
 #  path('services/<int:s_id>/1',views)
-    path('i',views.i,name='i')
+    path('i',views.testt,name='test')
   ]

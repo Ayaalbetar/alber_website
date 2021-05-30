@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital@1&family=Tajawal:wght@700&display=swap');
 {% load static%}
+
 body {
 direction :rtl;
 }
+*{
+font-family: 'Tajawal', sans-serif;}
 .navbar {
 box-shadow :10px 2px 5px #ebebeb ;
 }

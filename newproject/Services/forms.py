@@ -4,4 +4,4 @@ class NewPersonForm(forms.ModelForm):
 
     class Meta:
         model =Person
-        fields=['fname','pname',]
+        fields=['fname','pname','photo']

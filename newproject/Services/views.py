@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404
-from .models import Services,Service_details,Person,Request
+from .models import Services,Service_details,Person,Request,test
 from django.http import HttpResponse
 
 # Create your views here.
@@ -7,9 +7,7 @@ def index(request):
     #title= request.user
     title='جمعية البر والخدمات الاجتماعية '
     context={
-        "template":title
-
-    }
+        "template":title }
    # return HttpResponse('<H1 align="center">جمعية البر والخدمات الاجتماعية</h1>')
     return render(request,'index.html',context)
 
@@ -24,10 +22,7 @@ def services (request):
     s = Service_details.objects.all()
     context = {
         'services': services,
-        's' : s,
-
-      }
-
+        's' : s, }
     return  render(request,'services.html', context)
 
 
@@ -40,7 +35,13 @@ def services_details(request,services_id):
       'ss':  ss}
    return  render(request,'services_details.html', context)
 
+def testt(request):
 
+     if request.method=="POST":
+         namee = request.POST.get("names")
+         file=request.FILES.get("file")
+         test(name=namee,file=file).save()
+     return  render(request,'test.html')
 
 
 

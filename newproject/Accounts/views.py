@@ -76,7 +76,9 @@ def newstudent(request,):
 
 
        #if 'birthday' in request.POST:
-        #    birthday = request.POST['birthday']
+       #request.POST['birthday']
+
+
        #else:
         #   messages.error(request, 'خطأ في المواليد')
 
@@ -115,8 +117,13 @@ def newstudent(request,):
        if 'mname' in request.POST: mname = request.POST['mname']
        else: messages.error(request, 'اسم الام')
 
-       if  'f1' in request.POST and 'f2' in request.POST :photo1=[request.POST['f1'],request.POST['f2']]
-       else:messages.error(request,'phooooooootos')
+      # if  'f1' in request.POST and 'f2' in request.POST :
+
+       #ممكن هيك هذه صحيحة
+     #  photo1 = [request.POST['f1'], request.POST['f2']]
+     # رح جرب
+     #     photo1=request.FILES.getlist('f1')
+      # else:messages.error(request,'phooooooootos')
 
        if 'father_die'in request.POST:fatherdie=request.POST['father_die']
        #gender=request.POST['Radios1']
@@ -140,11 +147,22 @@ def newstudent(request,):
 
                student=Person(fname=fname,lname=lname,pname=pname,mname=mname,address=address,motherln=motherln,phone=phone,nationality=nationality,
                           id_namber=id_namber,place_birth=place_birth,gender=gender,birthday=birthday,)
-                               #photo=user_directory_path(Person.objects.set(id_namber=id_namber),"user")
+               photo1 = request.FILES.get("f1")
+              # photo=user_directory_path(Person.objects.get(id_namber=id_namber),"user"))
                             #father_die=fatherdie
                          #)
+               #Person.birthday.auto_created=request.POST['birthday']
+               #pp=request.POST['f1']
+              # photo1=user_directory_path(student,pp)
+             #  from  ALber import settings
+               #photo1 = os.path.join(settings.MEDIA_ROOT, user_directory_path(student, request.POST['f1']))
+               student.photo=photo1
+
+
                student.save()
+              # s.save()
                is_added=True
+
 
                id1=Person.objects.get(fname=fname,lname=lname,pname=pname,mname=mname,address=address,motherln=motherln,phone=phone,nationality=nationality,
                           id_namber=id_namber,place_birth=place_birth,gender=gender,birthday=birthday)
@@ -192,15 +210,25 @@ def newstudent(request,):
    return render(request,'pages/newstudent.html',context)
 # -------------------------
 def neworphan(request):
+
     context ={}
 
     return render(request,'pages/neworphan.html',context)
 #-------------------------
+from Services import  forms
 def newfamily(request):
-    context={}
+    form =  forms.NewPersonForm
+    if request.method == "POST":
+        form =forms.NewPersonForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    context={
+        'form':form
+    }
     return render(request,'pages/newfamily.html',context)
 
 #-------------------------
 def newmedicine(request):
     context={}
     return render(request,'pages/newmedicine.html',context)
+

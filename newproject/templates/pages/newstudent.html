@@ -20,7 +20,7 @@
 {%else%}
 
  <table class="table text-right table-borderless table-striped container">
- 	<form class="form form-inline" method="POST" >
+ 	<form class="form form-inline" method="POST"    enctype="multipart/form-data">
         <!-- action="{%url 'services'%}" -->
 {%endif%}
         {% csrf_token %}
@@ -46,7 +46,7 @@
   </div></td>
  		<td><div class="form-group form-inline">
     <label for="berithday">المواليد</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="date" class="form-control"  name=" birthday" id="berithday" value="{{birthday}}" required/>
+    <input type="text" class="form-control"  name=" birthday" id="berithday" value="{{birthday}}" required/>
   </div></td>
     </tr>
 
@@ -115,7 +115,7 @@
     <tr>
  	    <td><div class="form-group form-inline">
     <label for="File1">صورة الهوية</label>
-    <input type="file" class="form-control-file"  required  name="f1" id="File1">
+    <input type="file" class="form-control-file"   multiple required  name="f1" id="File1">
   </div></td>
  		<td><div class="form-group form-inline">
     <label for="File2">بيان عائلي</label>
