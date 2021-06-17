@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{%  load static %}
+{%  block content1%}عائلة أيتام{% endblock%}
+{% block content %}
+
+
+<section >
+<hr>
+<div class="container bootstrap snippet">
+    <div>
+      <img title="profile image" class="img-circle img-responsive pull-right" src="{% static 'assets/img/a.jfif' %}">
+      <h1>كفالة طالب علم</h1>
+    </div>
+    <form class="form" action="##" method="post" id="registrationForm">
+    <div class="row">
+      <div class="col-sm-3"><!--left col-->
+
+
+      <div class="text-center">
+        <img src="{% static 'assets/img/student.jpg' %}" class="avatar img-circle img-thumbnail" alt="avatar">
+      </div></hr><br>
+
+          <ul class="list-group">
+            <li class="list-group-item te text-center"><b> الوثائق المطلوبة </b><i class="fa fa-dashboard fa-1x"></i></li>
+
+            <li class="list-group-item text-right"><span class="pull-left">صورة الهوية</span> <input type="file" class="text-center center-block file-upload" name="f1" required ></li>
+
+            <li class="list-group-item text-right"><span class="pull-left">بيان عائلي</span> <input type="file" class="text-center center-block file-upload" name="f2" required ></li>
+
+            <li class="list-group-item text-right"><span class="pull-left">البطاقة الجامعية
+            </span> <input type="file" class="text-center center-block file-upload" name="f3" required ></li>
+
+            <li class="list-group-item text-right"><span class="pull-left">عقد ايجار المنزل
+            </span> <input type="file" class="text-center center-block file-upload" name="f4" required></li>
+
+            <li class="list-group-item text-right"><span class="pull-left">رسم التسجيل
+            </span> <input type="file" class="text-center center-block file-upload" name="f5" required></li>
+
+            <li class="list-group-item text-right"><span class="pull-left">وثيقة غير موظف
+            </span> <input type="file" class="text-center center-block file-upload" name="f6" required></li>
+
+            <li class="list-group-item text-right"><span class="pull-left">وثيقة دوام
+            </span> <input type="file" class="text-center center-block file-upload" name="f7" required></li>
+
+            <li class="list-group-item text-right"><span class="pull-left">أوراق الجامعة
+            </span> <input type="file" class="text-center center-block file-upload" name="f8" required></li>
+
+          </ul>
+
+
+
+        </div><!--/col-3-->
+      <div class="col-sm-9">
+                <hr>
+                <table   dir="rtl" class="table text-right table-borderless container">
+
+                      <tr>
+                        <td>
+                        <div class="form-group form-inline">
+                        <label for="fn">الاسم</label>
+                        <input type="text" class="form-control" name="name" id="fn" required/>
+                        </div>
+                        </td>
+                        <td>
+                        <div class="form-group form-inline">
+                        <label for="bornplace">محل الولادة</label>
+                        <input type="text" class="form-control"  name="bornplace" id="bornplace" required/>
+                        </td>
+                    </tr>
+                      <tr>
+                      <td><div class="form-group form-inline">
+                      <label for="ln">النسبة</label>
+                      <input type="text" class="form-control"  name="ln" id="ln" required/>
+                     </div>
+                      </td>
+                       <td>
+    	               <div class="form-group form-inline">
+                       <label for="berithday">المواليد</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                       <input type="date" class="form-control"  name="berithday" id="berithday" required/>
+                       </div>
+                   </td>
+                        </tr>
+
+                       <tr>
+                       <td>
+                       	<div class="form-check form-check-inline" id="radiosgroup">
+                         <label for="radiosgroup"> الجنس</label>
+                         <input class="form-check-input" type="radio" name="Radios1" id="Radios1" value="option1">
+                         &nbsp;&nbsp;&nbsp;
+                         <label class="form-check-label" for="Radios1">
+                               ذكر
+                         </label>
+                         <input class="form-check-input" type="radio"  required name="Radios1" id="Radios2" value="option2">
+                             &nbsp;&nbsp;&nbsp;
+                         <label class="form-check-label" for="Radios2" >
+                            انثى
+                         </label>
+                       </div>
+                       </div>
+                       </div>
+                       </td>
+                       <td>
+                       <div class="form-group form-inline">
+                       <label for="x1">قيد النفوس</label>
+                       <input type="text" class="form-control"  required name="x1" id="x1"/>
+                       </div>
+                       </td>
+                       </tr>
+                       <tr>
+                       <td><div class="form-group form-inline">
+                       <label for="fathern">اسم الأب</label>
+                       <input type="text" class="form-control" required  name="fathern" id="fathern"/>
+                       </div>
+                        </td>
+                       <td>
+                       <div class="form-group form-inline">
+                       <label for="x2">الرقم الوطني</label>
+                       <input type="number" class="form-control"  name="x2" id="x2" required/>
+                       </div>
+                       </td>
+                        </tr>
+                       <tr>
+                       <td>
+                       	<div class="form-group form-inline">
+                       <label for="mothern">اسم الأم</label>
+                       <input type="text" class="form-control" name="mothern" id="mothern"/>
+                       </div>
+                   </td>
+                   <td>
+                   	<div class="form-group form-inline">
+                    <label for="Nationality">الجنسية</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" class="form-control"   name="nationality" id="Nationality" value="سورية"/>
+                </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <div class="form-group form-inline">
+                    <label for="motherln">نسبة الأم</label>
+                    <input type="text"  class="form-control" name="motherln" id="motherln" required/>
+                    </div>
+                </td>
+                <td>
+                	<div class="form-group form-inline">
+                    <label for="phone">الهاتف</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="tel" class="form-control"  name="phone" id="phone" required/>
+
+                  </div>
+              </td>
+              </tr>
+          </div>
+               </table>
+    <div class="form-group">
+
+    <br>
+    <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+    <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+
+    </div>
+   </div>
+
+
+
+
+        </div><!--/col-9-->
+    </div><!--/row--></td></tr></div></td></tr>
+
+</form>
+</div>
+</section>
+
+
+
+{% endblock %}

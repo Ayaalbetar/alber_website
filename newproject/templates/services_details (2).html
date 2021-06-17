@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+{% load static %}
+
+  {% block content1 %}{{services.name}} {% endblock%}
+
+</head>
+<body>-->
+{% block content %}
+<br><br>
+ <div class="container">
+    <div class="col-lg-4">
+      <ol class="list-unstyled">
+
+          <li>
+              <a href="{%url 'services'%}">الخدمات</a>
+
+                {{services.pk}}{{services.name}}
+
+              {% for i in ss %}
+
+                      {% if i.idservice == services.pk %}
+         {{i.idservice}}
+        {% endif %}
+              {% endfor %}
+          </li>
+            {% if services.pk == 1 %}
+          <li>
+
+              <a href="{% url 'newstudent'%}">
+                  كفالة طالب علم
+              </a>
+          </li><li>
+               <a href="{% url 'neworphan'%}">
+                  كفالة أيتام
+              </a>
+
+          </li>
+          <li>
+               <a href="{% url 'newfamily'%}">
+               كفالة عائلة كريمة
+              </a>
+
+          </li>
+              {% endif %}
+          {% if services.pk == 2 %}
+          <li>
+               <a href="{% url 'newmwdicine'%}">
+           دواء دائم
+              </a>
+
+          </li>
+          {% endif %}
+      </ol>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+{% endblock%}

@@ -1,0 +1,329 @@
+{% extends 'base.html' %}
+{%  load static %}
+{% block content %}
+
+<h2 align="center" style="color:#b8dbff"  >   كفالة طالب علم</h2>
+ <table class="table text-right table-borderless table-striped container">
+ 	<form class="form form-inline">
+
+ 	<tr>
+ 		<td>
+    <div class="form-group form-inline">
+    <label for="fn">الاسم</label>
+    <input type="text" class="form-control" id="fn"/>
+  </div>
+ 		</td>
+ 		<td>
+ 	<div class="form-group form-inline">
+    <label for="bornplace">محل الولادة</label>
+    <input type="text" class="form-control" id="bornplace"/>
+ 		</td>
+
+ 	</tr>
+ 	<tr>
+ 	 <td><div class="form-group form-inline">
+    <label for="ln">النسبة</label>
+    <input type="text" class="form-control" id="ln"/>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="berithday">المواليد</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="date" class="form-control" id="berithday"/>
+  </div></td>
+    </tr>
+
+ 	<tr>
+ 	    <td><div class="form-check form-check-inline" id="radiosgroup">
+ 	    	<div class="form-check">
+ 	<label for="radiosgroup"> الجنس</label>
+  <input class="form-check-input" type="radio" name="Radios1" id="Radios1" value="option1">
+  &nbsp;&nbsp;&nbsp;
+  <label class="form-check-label" for="Radios1">
+    ذكر
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="Radios1" id="Radios2" value="option2">
+  &nbsp;&nbsp;&nbsp;
+  <label class="form-check-label" for="Radios2">
+    انثى
+  </label>
+</div></div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="x1">قيد النفوس</label>
+    <input type="text" class="form-control" id="x1"/>
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="fathern">اسم الأب</label>
+    <input type="text" class="form-control" id="fathern"/>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="x2">الرقم الوطني</label>
+    <input type="number" class="form-control" id="x2"/>
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="mothern">اسم الأم</label>
+    <input type="text" class="form-control" id="mothern"/>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="Nationality">الجنسية</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" class="form-control" id="Nationality" value="سورية"/></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="motherln">نسبة الأم</label>
+    <input type="text" class="form-control" id="motherln"/>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="phone">الهاتف</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" class="form-control" id="phone"/>
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">&nbsp;&nbsp;&nbsp;
+    <label class="form-check-label" for="exampleCheck1">الأب متوفي</label>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="exampleFormControlTextarea1">العنوان بالنفصيل</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+  </div></td>
+    </tr>
+    <td class="table-primary" colspan="2"><p class="text-center" style="font-size: 30px">الرجاء رفع الصور التالية</p></td>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="File1">صورة الهوية</label>
+    <input type="file" class="form-control-file" id="File1">
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="File2">بيان عائلي</label>
+    <input type="file" class="form-control-file" id="File1">
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="File3">البطاقة الجامعية</label>
+    <input type="file" class="form-control-file" id="File3">
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="File4">عقد ايجار المنزل</label>
+    <input type="file" class="form-control-file" id="File4">
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="File5">رسم التسجيل</label>
+    <input type="file" class="form-control-file" id="File5">
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="File6">وثيقة غير موظف</label>
+    <input type="file" class="form-control-file" id="File6" multiple="">
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="File7">وثيقة دوام</label>
+    <input type="file" class="form-control-file" id="File7">
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="File8">أوراق الجامعة</label>
+    <input type="file"  multiple class="form-control-file" id="File8">
+  </div></td>
+    </tr>
+
+  <tr><td>   <button type="submit" class="btn btn-primary">ارسال</button>	</td>
+
+  </tr>
+
+ </form>
+ </table>
+
+{% endblock %}
+
+
+
+
+
+
+
+<!--<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+</head>
+<body>
+<h1>املأ البيانات التالية </h1>
+{{ser}}
+<form method="post">
+    {% csrf_token%}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-success" >سجل</button>
+
+</form>
+</body>
+</html>-->
+
+ <h2 class="table-primary">
+ <p class="text-center text-primary p-3" style="font-size: 30px">
+ كفالة طالب علم</p></h2>
+
+{% if messages %}
+        {% for msg in messages%}
+        <div class="alert alert-info" role="alert" style="width:25%,">
+      <h4  style="text-align:center" class="alert-heading">أهلا بك </h4>
+       <p style="text-align:center"> {{msg}}</p>
+        {% endfor%}</div>
+        {% endif%}
+ {%if is_added == True %}
+<form  method="post" style=" display:none;">
+{%else%}
+
+ <table class="table text-right table-borderless table-striped container" dir="rtl">
+ 	<form class="form form-inline" method="POST"    enctype="multipart/form-data">
+        <!-- action="{%url 'services'%}" -->
+{%endif%}
+        {% csrf_token %}
+
+ 	<tr>
+ 		<td>
+          <div class="form-group form-inline">
+             <label for="fn">الاسم</label>
+             <input type="text" class="form-control" name="fname" id="fn"  value="{{fname}}" required/>
+           </div>
+ 		</td>
+ 		<td>
+ 	<div class="form-group form-inline">
+    <label for="bornplace">محل الولادة</label>
+    <input type="text" class="form-control"  name="bornplace" id="bornplace"  value="{{place_pirth}}" required/>
+        </td>
+
+ 	</tr>
+ 	<tr>
+ 	 <td><div class="form-group form-inline">
+    <label for="ln">النسبة</label>
+    <input type="text" class="form-control"  name="lname" id="ln"  value="{{lname}}" required/>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="berithday">المواليد</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="date" class="form-control"  name=" birthday" id="berithday" value="{{birthday}}" required/>
+  </div></td>
+    </tr>
+
+ 	<tr>
+ 	    <td><div class="form-check form-check-inline" id="radiosgroup">
+ 	    	<div class="form-check">
+ 	<label for="radiosgroup"> الجنس</label>
+  <input class="form-check-input" type="radio" name="Radios1" id="Radios1" value="ذكر">
+  &nbsp;&nbsp;&nbsp;
+  <label class="form-check-label" for="Radios1">
+    ذكر
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio"  required name="Radios1" id="Radios2" value="أنثى">
+  &nbsp;&nbsp;&nbsp;
+  <label class="form-check-label" for="Radios2" >
+    انثى
+  </label>
+</div></div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="x1">قيد النفوس</label>
+    <input type="text" class="form-control"  required name="x1" id="x1"/>
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="fathern">اسم الأب</label>
+    <input type="text" class="form-control" required  name="pname" id="fathern" value="{{pname}}"/>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="x2">الرقم الوطني</label>
+    <input type="number" class="form-control"  name="id_namber" id="x2"   value="{{id_namber}}" required/>
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="mothern">اسم الأم</label>
+    <input type="text" class="form-control" name="mname"   value="{{mname}}" id="mothern"/>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="Nationality">الجنسية</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" class="form-control"   name="nationality" id="Nationality" value="سورية"/></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="motherln">نسبة الأم</label>
+    <input type="text"  class="form-control" name="motherln" id="motherln"   value="{{motherln}}" required/>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="phone">الهاتف</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="tel" class="form-control"  name="phone" id="phone"  value="{{phone}}" required/>
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" name="father_die" id="exampleCheck1">&nbsp;&nbsp;&nbsp;
+    <label class="form-check-label" for="exampleCheck1">الأب متوفي</label>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="exampleFormControlTextarea1">العنوان بالنفصيل</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="address"   required rows="2"></textarea>
+  </div></td>
+    </tr>
+    <td class="table-primary" colspan="2"><p class="text-center" style="font-size: 30px">الرجاء رفع الصور التالية</p></td>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="File1">صورة الهوية</label>
+    <input type="file" class="form-control-file"   multiple required  name="f1" id="File1">
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="File2">بيان عائلي</label>
+    <input type="file" class="form-control-file"  required name="f2" id="File2">
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="File3">البطاقة الجامعية</label>
+    <input type="file" class="form-control-file"  required name="f3" id="File3">
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="File4">عقد ايجار المنزل</label>
+    <input type="file" class="form-control-file" name="f4" id="File4" required>
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="File5">رسم التسجيل</label>
+    <input type="file" class="form-control-file" name="f5" id="File5" required>
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="File6">وثيقة غير موظف</label>
+    <input type="file" class="form-control-file" id="File6" name="f6" required multiple="">
+  </div></td>
+    </tr>
+    <tr>
+ 	    <td><div class="form-group form-inline">
+    <label for="File7">وثيقة دوام</label>
+    <input type="file" class="form-control-file" name="f7" id="File7">
+  </div></td>
+ 		<td><div class="form-group form-inline">
+    <label for="File8">أوراق الجامعة</label>
+    <input type="file"  multiple class="form-control-file"  required name="f8" id="File8">
+  </div></td>
+    </tr>
+
+  <tr><td>   <button type="submit" class="btn btn-primary"  name="btnsign">ارسال</button>
+      <button type="reset" class="btn btn-primary">اعادة الطلب</button></td>
+
+
+  </tr>
+
+ </form>
+ </table>
+
+
+
